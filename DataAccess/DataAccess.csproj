@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9C5EAF8-F627-45F0-80C3-25D258A8F9DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Airlines.cs" />
+    <Compile Include="AirwayBill.cs" />
+    <Compile Include="AwbSeries.cs" />
+    <Compile Include="Batch.cs" />
+    <Compile Include="BookingType.cs" />
+    <Compile Include="Dashboard.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="Flight.cs" />
+    <Compile Include="AwbIssuance.cs" />
+    <Compile Include="GPS.cs" />
+    <Compile Include="Graph.cs" />
+    <Compile Include="Invoice.cs" />
+    <Compile Include="MasterAirwayBill.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="Reason.cs" />
+    <Compile Include="Remarks.cs" />
+    <Compile Include="Reports\BCOSalesSummary.cs" />
+    <Compile Include="Reports\BookingReport.cs" />
+    <Compile Include="Reports\BranchAcceptance.cs" />
+    <Compile Include="Reports\Bundle.cs" />
+    <Compile Include="Reports\CargoMonitoring.cs" />
+    <Compile Include="Reports\CargoTransfer.cs" />
+    <Compile Include="Reports\CollectionReport.cs" />
+    <Compile Include="Reports\DailyTrip.cs" />
+    <Compile Include="Reports\FLM_Qtyby_Commodity.cs" />
+    <Compile Include="Reports\GatewayInbound.cs" />
+    <Compile Include="Reports\GatewayOutbound.cs" />
+    <Compile Include="Reports\GatewayTransmittal.cs" />
+    <Compile Include="Reports\GrandManifestReport.cs" />
+    <Compile Include="Reports\HoldCargo.cs" />
+    <Compile Include="Reports\MasterSales.cs" />
+    <Compile Include="Reports\PaymentSummaryReport.cs" />
+    <Compile Include="Reports\PickupCargoManifest.cs" />
+    <Compile Include="Reports\SalesPerClient.cs" />
+    <Compile Include="Reports\SalesPerRevenueUnit.cs" />
+    <Compile Include="Reports\SalesPerShipmode.cs" />
+    <Compile Include="Reports\SalesPerUserLevel.cs" />
+    <Compile Include="Reports\Segregation.cs" />
+    <Compile Include="Reports\Unbundle.cs" />
+    <Compile Include="RevenueUnitType.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="Shipment.cs" />
+    <Compile Include="StatementOfAccount.cs" />
+    <Compile Include="StatementOfAccountAdjustment.cs" />
+    <Compile Include="Status.cs" />
+    <Compile Include="Tracking_BatchName.cs" />
+    <Compile Include="BillingPeriod.cs" />
+    <Compile Include="Industry.cs" />
+    <Compile Include="OrganizationType.cs" />
+    <Compile Include="BusinessType.cs" />
+    <Compile Include="AccountStatus.cs" />
+    <Compile Include="Branch.cs" />
+    <Compile Include="ApplicableRate.cs" />
+    <Compile Include="BookingStatus.cs" />
+    <Compile Include="BookingRemark.cs" />
+    <Compile Include="AccountType.cs" />
+    <Compile Include="DeliveryRemarks.cs" />
+    <Compile Include="DeliveryStatus.cs" />
+    <Compile Include="ApprovingAuthority.cs" />
+    <Compile Include="Province.cs" />
+    <Compile Include="RateMatrix.cs" />
+    <Compile Include="ShipMode.cs" />
+    <Compile Include="PaymentTerm.cs" />
+    <Compile Include="PaymentMode.cs" />
+    <Compile Include="ServiceMode.cs" />
+    <Compile Include="ServiceType.cs" />
+    <Compile Include="TransShipmentRoutes.cs" />
+    <Compile Include="Packaging.cs" />
+    <Compile Include="Crating.cs" />
+    <Compile Include="ShipmentBasicFee.cs" />
+    <Compile Include="GoodsDescription.cs" />
+    <Compile Include="CommodityType.cs" />
+    <Compile Include="Commodity.cs" />
+    <Compile Include="Gateway.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="Area.cs" />
+    <Compile Include="Cluster.cs" />
+    <Compile Include="CategoryInfo.cs" />
+    <Compile Include="BranchCorpOffice.cs" />
+    <Compile Include="Region.cs" />
+    <Compile Include="IslandGroup.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="Representatives.cs" />
+    <Compile Include="EmployeeInfo.cs" />
+    <Compile Include="RevenueInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="UserRole.cs" />
+    <Compile Include="Users.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{1ea9e4c1-0c5f-4114-a917-7fae6c35ff15}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

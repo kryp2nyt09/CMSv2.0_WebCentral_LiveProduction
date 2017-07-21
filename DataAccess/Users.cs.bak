@@ -1,0 +1,224 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
+namespace DataAccess
+{
+    public class Users
+    {
+        /// <summary>
+        /// RJCORTEZIII                    ADD                     5.28.2015
+        /// REMARKS:      Get user list
+        /// </summary>
+        /// <param name="conSTR"></param>
+        /// <returns></returns>
+        public static DataSet GetUsers(string conSTR)
+        {
+            using (SqlConnection con = new SqlConnection(conSTR))
+            {
+
+                //SqlCommand cmd = new SqlCommand();
+                //cmd.CommandType = CommandType.StoredProcedure;
+
+                //SqlDataAdapter da = new SqlDataAdapter("spGetUsers", con);
+
+                DataSet ds = new DataSet();
+                //da.Fill(ds);
+                return ds;
+
+            }
+        }
+
+        /// <summary>
+        /// RJCORTEZIII                    ADD                     5.28.2015
+        /// REMARKS:   Search User by username
+        /// </summary>
+        /// <param name="conSTR"></param>
+        /// <param name="uname"></param>
+        /// <returns></returns>
+        public static DataSet SearchUser(string conSTR, string uname)
+        {
+            using (SqlConnection con = new SqlConnection(conSTR))
+            {
+
+                SqlDataAdapter da = new SqlDataAdapter("spGetUserSearch", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@user", SqlDbType.VarChar).Value = uname;
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+
+            }
+        }
+
+        public static DataSet VerifyUser(string uName, string uPass, string conSTR)
+        {
+            using (SqlConnection con = new SqlConnection(conSTR))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("sp_Verify_User", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@User", SqlDbType.VarChar).Value = uName;
+                da.SelectCommand.Parameters.Add("@Pass", SqlDbType.VarChar).Value = uPass;
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
+        
+        }
+
+
+        public static int isEmailOrUsernameExist(string useroremail, string conSTR)
+        {
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["connString"].ConnectionString))
+            {
+
+                SqlDataAdapter da = new SqlDataAdapter("sp_Verify_UserOrEmailExist", con);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.Add("@UserEmail", SqlDbType.VarChar).Value = useroremail;
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// RJCORTEZIII                    ADD                     5.28.2015
+        /// Remarks:    Add user to user list
+        /// </summary>
+        /// <param name="uName"></param>
+        /// <param name="pass"></param>
+        /// <param name="createdBy"></param>
+        /// <param name="conStr"></param>
+        public static void AddUsers(string username, string password, int userroleid, string emailadd, int isActive, int isEmailVerified, DateTime Lastlogin, string linktoverify, string createdby, string vcode, string conStr)
+        {
+            using (SqlConnection con = new SqlConnection(conStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_Insert_User_Info", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = username;
+                    cmd.Parameters.Add("@UserroleId", SqlDbType.Int).Value = userroleid;
+                    cmd.Parameters.Add("@Password", SqlDbType.VarChar).Value = password;
+                    cmd.Parameters.Add("@EmailAddress", SqlDbType.VarChar).Value = emailadd;
+                    cmd.Parameters.Add("@IsActive", SqlDbType.Int).Value = isActive;
+                    cmd.Parameters.Add("@IsEmailVerified", SqlDbType.Int).Value = isEmailVerified;
+                    cmd.Parameters.Add("@LastLogin", SqlDbType.VarChar).Value = Lastlogin;
+                    cmd.Parameters.Add("@lnkToVerify", SqlDbType.VarChar).Value = linktoverify;
+                    cmd.Parameters.Add("@CreatedBy", SqlDbType.VarChar).Value = createdby;
+                    cmd.Parameters.Add("@vcode", SqlDbType.VarChar).Value = vcode;
+                    con.Open(); 
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+
+        public static void verifyemail(string vcode, string conStr)
+        {
+            using (SqlConnection con = new SqlConnection(conStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_Verify_Email", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@vcode", SqlDbType.VarChar).Value = vcode;
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+
+
+        }
+
+        public static void UpdateUser(string conStr, string eAdd, DateTime eToday, string currentuser, int userid)
+        {
+            using (SqlConnection con = new SqlConnection(conStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("spUpdateUsers", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@userId", SqlDbType.VarChar).Value = userid;
+                    cmd.Parameters.Add("@eadd", SqlDbType.VarChar).Value = eAdd;
+                    cmd.Parameters.Add("@DateModified", SqlDbType.DateTime).Value = eToday;
+                    cmd.Parameters.Add("@ModifiedBy", SqlDbType.VarChar).Value = currentuser;
+
+
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+        public static void DeleteUSer(int uID, string conStr)
+        {
+
+            using (SqlConnection con = new SqlConnection(conStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("spDeleteUser", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@Id", SqlDbType.Int).Value = uID;
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
+
+        public static Guid GetUserId(string username, string conStr)
+        {
+            SqlDataAdapter da = new SqlDataAdapter("sp_Get_User_Id", conStr);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Add("@UserName", SqlDbType.VarChar).Value = username;
+
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            Guid userid = Guid.Parse(dt.Rows[0].ItemArray[0].ToString());
+
+            return userid;
+
+
+        }
+
+        public static void AddUserInfo(Guid userid, string firstname, string lastname, string gender, string profileLink, string conStr)
+        {
+            using (SqlConnection con = new SqlConnection(conStr))
+            {
+                using (SqlCommand cmd = new SqlCommand("sp_Insert_User_PersonalInfo", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@UserId", SqlDbType.UniqueIdentifier).Value = userid;
+                    cmd.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = firstname;
+                    cmd.Parameters.Add("@LastName", SqlDbType.VarChar).Value = lastname;
+                    //cmd.Parameters.Add("@Birthdate", SqlDbType.Date).Value = "";
+                    cmd.Parameters.Add("@Gender", SqlDbType.VarChar).Value = gender;
+                    //cmd.Parameters.Add("@CellphoneNumber", SqlDbType.VarChar).Value = "";
+                    cmd.Parameters.Add("@ProfileLink", SqlDbType.VarChar).Value = profileLink;
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+    }
+}

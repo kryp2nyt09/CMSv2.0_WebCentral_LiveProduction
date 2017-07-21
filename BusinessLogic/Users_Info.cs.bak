@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Configuration;
+using System.Web.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using DAL = DataAccess;
+
+
+namespace BusinessLogic
+{
+    public class Users_Info
+    {
+        public static void AddUsers(string username, string password, int userroleid, string emailadd, int isActive, int isEmailVerified, DateTime Lastlogin, string linktoverify, string createdby, string vcode, string connectionstring )
+        {
+
+            DAL.Users.AddUsers(username, password, userroleid, emailadd, isActive, isEmailVerified, Lastlogin, linktoverify, createdby, vcode, connectionstring);
+
+        }
+        
+        public static void verifyemail(string vcode,  string connectionstring )
+        {
+
+
+            DAL.Users.verifyemail(vcode, connectionstring);
+        
+        }
+
+        public static DataSet VerifyUser(string uName, string uPass, string conSTR)
+        {
+
+            DataSet ds = new DataSet();
+            ds = DAL.Users.VerifyUser(uName, uPass, conSTR);
+            return ds;
+
+        }
+
+        public static int isEmailOrUsernameExist(string useroremail, string conSTR)
+        {
+            return DAL.Users.isEmailOrUsernameExist(useroremail, conSTR);
+        }
+
+
+   
+
+        public static void AddUserInfo(Guid userid, string firstname, string lastname, string gender, string profileLink, string conStr)
+        {
+
+            DAL.Users.AddUserInfo(userid, firstname, lastname, gender, profileLink, conStr);
+
+        }
+
+        public static Guid GetUserId(string userName, string conStr)
+        {
+            return DAL.Users.GetUserId(userName, conStr);
+        }
+
+        
+        public static DataSet GetUserInfo(string UserName, string conStr) 
+        {
+            return DAL.Users.GetUserInfo(UserName, conStr);
+        }
+
+        public static void UpdateUserProfile(string username,string FirstName,string LastName,string Email,string Mobile,DateTime Birthday,string Gender,string conStr)
+        {
+            DAL.Users.UpdateUserProfile(username,FirstName,LastName,Email,Mobile,Birthday,Gender,conStr);
+        }
+
+    }
+}

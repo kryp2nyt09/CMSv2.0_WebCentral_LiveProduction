@@ -1,0 +1,2181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{204B1088-FBB5-4F07-B286-59266857FD29}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMSVersion2</RootNamespace>
+    <AssemblyName>CMSVersion2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting, Version=11.0.17.201, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.Reporting.Services.WebApi, Version=11.0.17.201, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.Reporting.XpsRendering, Version=11.0.17.201, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.ReportViewer.Html5.WebForms, Version=11.0.17.201, Culture=neutral, PublicKeyToken=a9d7983dfcc261be" />
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>C:\Users\Dev - Kim\Desktop\CMS Web Version\Webv2.0\CMS-Webv2.0\CMSVersion2\bin\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>C:\Users\Dev - Kim\Desktop\CMS Web Version\Webv2.0\CMS-Webv2.0\CMSVersion2\bin\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2017.1.118.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2017.1.118.45\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2017.1.116.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2017.1.118.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2017.1.116.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2017.1.118.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2017.1.116.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2017.1.118.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2017.1.116.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2017.1.118.45\AdditionalLibraries\Bin45\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2017.1.116.40, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\RCAJAX\2017.1.118.45\AdditionalLibraries\Bin45\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\AddPhoneNumber.aspx" />
+    <Content Include="Account\Confirm.aspx" />
+    <Content Include="Account\Forgot.aspx" />
+    <Content Include="Account\Lockout.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\ManageLogins.aspx" />
+    <Content Include="Account\ManagePassword.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
+    <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Administration\Employee.aspx" />
+    <Content Include="Administration\EmployeeModal\Add.aspx" />
+    <Content Include="Administration\EmployeeModal\Edit.aspx" />
+    <Content Include="Administration\UserModal\Add.aspx" />
+    <Content Include="Administration\UserModal\Edit.aspx" />
+    <Content Include="Administration\Users.aspx" />
+    <Content Include="Booking\ViewBookingModule.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\full-slider.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Corporate\ApprovingAuthority.aspx" />
+    <Content Include="Corporate\ApprovingAuthorityModal\Add.aspx" />
+    <Content Include="Corporate\ApprovingAuthorityModal\Edit.aspx" />
+    <Content Include="Corporate\ApprovingAuthorityModal\View.aspx" />
+    <Content Include="Corporate\Booking\AddBooking.aspx" />
+    <Content Include="Corporate\Booking\ViewBooking.aspx" />
+    <Content Include="Corporate\Company.aspx" />
+    <Content Include="Corporate\CompanyModal\Add.aspx" />
+    <Content Include="Corporate\CompanyModal\Edit.aspx" />
+    <Content Include="Corporate\Reports\CompanyExportPreview.aspx" />
+    <Content Include="Corporate\Representative.aspx" />
+    <Content Include="Corporate\RepresentativeModal\Add.aspx" />
+    <Content Include="Corporate\RepresentativeModal\Edit.aspx" />
+    <Content Include="Corporate\RepresentativeModal\View.aspx" />
+    <Content Include="Corporate\StatementOfAccount.aspx" />
+    <Content Include="Corporate\StatementOfAccountAdjustment\AddStatementOfAccountAdjustment.aspx" />
+    <Content Include="Corporate\StatementOfAccountPrint\StatementOfAccountPrint.aspx" />
+    <Content Include="Customer\Customer.aspx" />
+    <Content Include="Customer\CustomerModal\AddCustomer.aspx" />
+    <Content Include="Customer\CustomerModal\EditCustomer.aspx" />
+    <Content Include="Customer\CustomerModal\Import.aspx" />
+    <Content Include="Error\UnderMaintenance.aspx" />
+    <Content Include="Error\UnderMaintenancePage.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Corporate\SOAPrintedPDF\MNL-732017-00004_Bank Of The Philippine Island_00001.pdf" />
+    <Content Include="Corporate\SOAPrintedPDF\MNL-732017-00004_Bank Of The Philippine Island_00002.pdf" />
+    <Content Include="Corporate\SOAPrintedPDF\MNL-732017-00004_Bank Of The Philippine Island_00003.pdf" />
+    <None Include="Properties\PublishProfiles\ApCargo.pubxml" />
+    <None Include="Properties\PublishProfiles\cms.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Images\APCARGO-Logo.jpg" />
+    <Content Include="Images\emblem.png" />
+    <Content Include="Images\logo1.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="Maintenance\AWBSeries\Issuance.aspx" />
+    <Content Include="Maintenance\AWBSeries\IssuanceModal\Add.aspx" />
+    <Content Include="Maintenance\AWBSeries\IssuanceModal\Edit.aspx" />
+    <Content Include="Maintenance\AWBSeries\Monitoring.aspx" />
+    <Content Include="Maintenance\AWBSeries\Reports\AwbIssuanceExport.aspx" />
+    <Content Include="Maintenance\AWBSeries\Summary.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\CMSMaintenance.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\AccountStatus\AddAccountStatus.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\AccountStatus\EditAccountStatus.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\AccountType\AddAccountType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\AccountType\EditAccountType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Airlines\AddAirlines.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Airlines\EditAirlines.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ApplicableRate\AddApplicableRate.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ApplicableRate\EditApplicableRate.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Area\AddArea.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Area\EditArea.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Batch\Add.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Batch\Edit.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BookingRemark\AddBookingRemark.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BookingRemark\EditBookingRemark.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BookingStatus\AddBookingStatus.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BookingStatus\EditBookingStatus.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BranchCorpOffice\AddBranchCorp.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BranchCorpOffice\EditBranchCorp.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BranchGateway\AddGateway.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BranchGateway\EditGateway.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BranchSatelliteOfficeMaintenance\AddBSO.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BranchSatelliteOfficeMaintenance\EditBSO.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BusinessType\AddBusinessType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\BusinessType\EditBusinessType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\City\AddCity.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\City\EditCity.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Cluster\AddCluster.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Cluster\EditCluster.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\CommodityType\AddCommodityType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\CommodityType\EditCommodityType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Commodity\AddCommodity.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Commodity\EditCommodity.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Crating\AddCrating.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Crating\EditCrating.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\DeliveryRemark\AddDeliveryRemark.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\DeliveryRemark\EditDeliveryRemark.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\DeliveryStatus\AddDeliveryStatus.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\DeliveryStatus\EditDeliveryStatus.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Flight\AddFlight.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Flight\EditFlight.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\GoodsDescription\AddGoodsDesc.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\GoodsDescription\EditGoodsDesc.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\GroupIslandMaintenance\AddGroupIsland.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\GroupIslandMaintenance\EditGroupIsland.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Industry\AddIndustry.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Industry\EditIndustry.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\OrganizationType\AddOrganizationType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\OrganizationType\EditOrganizationType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Packaging\AddPackaging.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Packaging\EditPackaging.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\PaymentMode\AddPaymentMode.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\PaymentMode\EditPaymentMode.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\PaymentTerm\AddPaymentTerm.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\PaymentTerm\EditPaymentTerm.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ProvinceMaintenance\AddProvince.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ProvinceMaintenance\EditProvince.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Reason\AddReason.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Reason\EditReason.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\RegionMaintenance\AddRegion.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\RegionMaintenance\EditRegion.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Remarks\AddRemarks.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Remarks\EditRemarks.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\RevenueTypeMaintenance\AddRUT.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\RevenueTypeMaintenance\EditRUT.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\SBF\AddSBF.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\SBF\EditSBF.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ServiceMode\AddServiceMode.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ServiceMode\EditServiceMode.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ServiceType\AddServiceType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ServiceType\EditServiceType.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ShipMode\AddShipMode.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\ShipMode\EditShipMode.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Status\AddStatus.aspx" />
+    <Content Include="Maintenance\CMSMaintenance\UserModal\Status\EditStatus.aspx" />
+    <Content Include="Maintenance\FlightInformation\FlightInformation.aspx" />
+    <Content Include="Maintenance\FlightInformation\Flight\Add.aspx" />
+    <Content Include="Maintenance\FlightInformation\Flight\Edit.aspx" />
+    <Content Include="Maintenance\RateMatrix\RateMatrixMain.aspx" />
+    <Content Include="Maintenance\RateMatrix\RateMatrixEvent\Add.aspx" />
+    <Content Include="Maintenance\RateMatrix\RateMatrixEvent\Edit.aspx" />
+    <Content Include="Maintenance\RateMatrix\RateMatrixEvent\Import.aspx" />
+    <Content Include="Maintenance\TrackNTrace\TrackNTrace.aspx" />
+    <Content Include="Maintenance\TruckAreaManagement\TruckAreaManagement.aspx" />
+    <Content Include="Report\AWBNoTracking.aspx" />
+    <Content Include="Report\AWBDetailedTracking.aspx" />
+    <Content Include="Report\AWBTracking\AWBTracking.aspx" />
+    <Content Include="Report\AWBTracking\AWBTrackingModal\ViewCargo.aspx" />
+    <Content Include="Report\Finance\Collections1.aspx" />
+    <Content Include="Report\Finance\Sales\MasterSales.aspx" />
+    <Content Include="Report\Finance\Sales\SalesPerBCO.aspx" />
+    <Content Include="Report\Finance\Sales\SalesPerClient.aspx" />
+    <Content Include="Report\Finance\Sales\SalesPerRevenueUnit.aspx" />
+    <Content Include="Report\Finance\Sales\SalesPerShipmode.aspx" />
+    <Content Include="Report\Finance\Sales\SalesPerUserLevel.aspx" />
+    <Content Include="Report\FLM\FLM_Qtyby_Commodity.aspx" />
+    <Content Include="Report\FLM\FLM_Wtby_Commodity.aspx" />
+    <Content Include="Report\Operation\AWBNoModal\AWBTrackingModal.aspx" />
+    <Content Include="Report\Operation\CargoMonitoring\Delivered.aspx" />
+    <Content Include="Report\Operation\CargoMonitoring\Hold.aspx" />
+    <Content Include="Report\Operation\CargoMonitoring\Misrouted.aspx" />
+    <Content Include="Report\Operation\CargoMonitoring\Offloaded.aspx" />
+    <Content Include="Report\Operation\CargoMonitoring\Pending.aspx" />
+    <Content Include="Report\Operation\CargoMonitoring\RUD.aspx" />
+    <Content Include="Report\Operation\Manifest\Booking.aspx" />
+    <Content Include="Report\Operation\Manifest\BranchAcceptance.aspx" />
+    <Content Include="Report\Operation\Manifest\Bundle.aspx" />
+    <Content Include="Report\Operation\Manifest\CargoTransfer.aspx" />
+    <Content Include="Report\Operation\Manifest\DailyTrip.aspx" />
+    <Content Include="Report\Operation\Manifest\GatewayInbound.aspx" />
+    <Content Include="Report\Operation\Manifest\GatewayOutbound.aspx" />
+    <Content Include="Report\Operation\Manifest\GatewayTransmittal.aspx" />
+    <Content Include="Report\Operation\Manifest\GrandManifest.aspx" />
+    <Content Include="Report\Operation\Manifest\HoldCargo.aspx" />
+    <Content Include="Report\Operation\Manifest\MasterAirwayBillTracking.aspx" />
+    <Content Include="Report\Operation\Manifest\PaymentSummaryReport.aspx" />
+    <Content Include="Report\Operation\Manifest\Pickup.aspx" />
+    <Content Include="Report\Operation\Manifest\Reports\ReportViewer.aspx" />
+    <Content Include="Report\Operation\Manifest\Segregation.aspx" />
+    <Content Include="Report\Operation\Manifest\Unbundle.aspx" />
+    <Content Include="Report\ReportViewerForm1.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Settings\ManagePassword.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="UserAccess\Roles\ManageRoles.aspx" />
+    <Content Include="UserAccess\Roles\RolesModal\AddRoles.aspx" />
+    <Content Include="UserAccess\Roles\RolesModal\EditRoles.aspx" />
+    <Content Include="UserAccess\Roles\RolesModal\ViewRoles.aspx" />
+    <Content Include="UserAccess\UserRole\ManageUserRole.aspx" />
+    <Content Include="UserAccess\UserRole\UserRoleModal\AddAccesstoModule.aspx" />
+    <Content Include="UserAccess\UserRole\UserRoleModal\AddUserRole.aspx" />
+    <Content Include="UserAccess\UserRole\UserRoleModal\EditUserRole.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AddPhoneNumber.aspx.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
+      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Confirm.aspx.designer.cs">
+      <DependentUpon>Confirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Lockout.aspx.designer.cs">
+      <DependentUpon>Lockout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManageLogins.aspx.designer.cs">
+      <DependentUpon>ManageLogins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
+      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
+      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
+      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Employee.aspx.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Employee.aspx.designer.cs">
+      <DependentUpon>Employee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\EmployeeModal\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\EmployeeModal\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\EmployeeModal\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\EmployeeModal\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UserModal\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UserModal\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\UserModal\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\UserModal\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administration\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Booking\ViewBookingModule.aspx.cs">
+      <DependentUpon>ViewBookingModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Booking\ViewBookingModule.aspx.designer.cs">
+      <DependentUpon>ViewBookingModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Corporate\ApprovingAuthority.aspx.cs">
+      <DependentUpon>ApprovingAuthority.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\ApprovingAuthority.aspx.designer.cs">
+      <DependentUpon>ApprovingAuthority.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\ApprovingAuthorityModal\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\ApprovingAuthorityModal\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\ApprovingAuthorityModal\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\ApprovingAuthorityModal\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\ApprovingAuthorityModal\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\ApprovingAuthorityModal\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\Booking\AddBooking.aspx.cs">
+      <DependentUpon>AddBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\Booking\AddBooking.aspx.designer.cs">
+      <DependentUpon>AddBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\Booking\ViewBooking.aspx.cs">
+      <DependentUpon>ViewBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\Booking\ViewBooking.aspx.designer.cs">
+      <DependentUpon>ViewBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\Company.aspx.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\Company.aspx.designer.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\CompanyModal\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\CompanyModal\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\CompanyModal\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\CompanyModal\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\Reports\CompanyExportPreview.aspx.cs">
+      <DependentUpon>CompanyExportPreview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\Reports\CompanyExportPreview.aspx.designer.cs">
+      <DependentUpon>CompanyExportPreview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\Representative.aspx.cs">
+      <DependentUpon>Representative.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\Representative.aspx.designer.cs">
+      <DependentUpon>Representative.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\RepresentativeModal\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\RepresentativeModal\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\RepresentativeModal\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\RepresentativeModal\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\RepresentativeModal\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\RepresentativeModal\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\StatementOfAccount.aspx.cs">
+      <DependentUpon>StatementOfAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\StatementOfAccount.aspx.designer.cs">
+      <DependentUpon>StatementOfAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\StatementOfAccountAdjustment\AddStatementOfAccountAdjustment.aspx.cs">
+      <DependentUpon>AddStatementOfAccountAdjustment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\StatementOfAccountAdjustment\AddStatementOfAccountAdjustment.aspx.designer.cs">
+      <DependentUpon>AddStatementOfAccountAdjustment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\StatementOfAccountPrint\SOAReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Corporate\StatementOfAccountPrint\SOAReport.designer.cs">
+      <DependentUpon>SOAReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Corporate\StatementOfAccountPrint\StatementOfAccountPrint.aspx.cs">
+      <DependentUpon>StatementOfAccountPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Corporate\StatementOfAccountPrint\StatementOfAccountPrint.aspx.designer.cs">
+      <DependentUpon>StatementOfAccountPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Customer.aspx.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Customer.aspx.designer.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerModal\AddCustomer.aspx.cs">
+      <DependentUpon>AddCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerModal\AddCustomer.aspx.designer.cs">
+      <DependentUpon>AddCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerModal\EditCustomer.aspx.cs">
+      <DependentUpon>EditCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerModal\EditCustomer.aspx.designer.cs">
+      <DependentUpon>EditCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerModal\Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerModal\Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\UnderMaintenance.aspx.cs">
+      <DependentUpon>UnderMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\UnderMaintenance.aspx.designer.cs">
+      <DependentUpon>UnderMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error\UnderMaintenancePage.aspx.cs">
+      <DependentUpon>UnderMaintenancePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error\UnderMaintenancePage.aspx.designer.cs">
+      <DependentUpon>UnderMaintenancePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\Issuance.aspx.cs">
+      <DependentUpon>Issuance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\Issuance.aspx.designer.cs">
+      <DependentUpon>Issuance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\IssuanceModal\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\IssuanceModal\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\IssuanceModal\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\IssuanceModal\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\Monitoring.aspx.cs">
+      <DependentUpon>Monitoring.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\Monitoring.aspx.designer.cs">
+      <DependentUpon>Monitoring.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\Reports\AwbIssuanceExport.aspx.cs">
+      <DependentUpon>AwbIssuanceExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\Reports\AwbIssuanceExport.aspx.designer.cs">
+      <DependentUpon>AwbIssuanceExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\Summary.aspx.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\AWBSeries\Summary.aspx.designer.cs">
+      <DependentUpon>Summary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\CMSMaintenance.aspx.cs">
+      <DependentUpon>CMSMaintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\CMSMaintenance.aspx.designer.cs">
+      <DependentUpon>CMSMaintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\AccountStatus\AddAccountStatus.aspx.cs">
+      <DependentUpon>AddAccountStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\AccountStatus\AddAccountStatus.aspx.designer.cs">
+      <DependentUpon>AddAccountStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\AccountStatus\EditAccountStatus.aspx.cs">
+      <DependentUpon>EditAccountStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\AccountStatus\EditAccountStatus.aspx.designer.cs">
+      <DependentUpon>EditAccountStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\AccountType\AddAccountType.aspx.cs">
+      <DependentUpon>AddAccountType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\AccountType\AddAccountType.aspx.designer.cs">
+      <DependentUpon>AddAccountType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\AccountType\EditAccountType.aspx.cs">
+      <DependentUpon>EditAccountType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\AccountType\EditAccountType.aspx.designer.cs">
+      <DependentUpon>EditAccountType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Airlines\AddAirlines.aspx.cs">
+      <DependentUpon>AddAirlines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Airlines\AddAirlines.aspx.designer.cs">
+      <DependentUpon>AddAirlines.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Airlines\EditAirlines.aspx.cs">
+      <DependentUpon>EditAirlines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Airlines\EditAirlines.aspx.designer.cs">
+      <DependentUpon>EditAirlines.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ApplicableRate\AddApplicableRate.aspx.cs">
+      <DependentUpon>AddApplicableRate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ApplicableRate\AddApplicableRate.aspx.designer.cs">
+      <DependentUpon>AddApplicableRate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ApplicableRate\EditApplicableRate.aspx.cs">
+      <DependentUpon>EditApplicableRate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ApplicableRate\EditApplicableRate.aspx.designer.cs">
+      <DependentUpon>EditApplicableRate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Area\AddArea.aspx.cs">
+      <DependentUpon>AddArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Area\AddArea.aspx.designer.cs">
+      <DependentUpon>AddArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Area\EditArea.aspx.cs">
+      <DependentUpon>EditArea.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Area\EditArea.aspx.designer.cs">
+      <DependentUpon>EditArea.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Batch\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Batch\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Batch\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Batch\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BookingRemark\AddBookingRemark.aspx.cs">
+      <DependentUpon>AddBookingRemark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BookingRemark\AddBookingRemark.aspx.designer.cs">
+      <DependentUpon>AddBookingRemark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BookingRemark\EditBookingRemark.aspx.cs">
+      <DependentUpon>EditBookingRemark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BookingRemark\EditBookingRemark.aspx.designer.cs">
+      <DependentUpon>EditBookingRemark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BookingStatus\AddBookingStatus.aspx.cs">
+      <DependentUpon>AddBookingStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BookingStatus\AddBookingStatus.aspx.designer.cs">
+      <DependentUpon>AddBookingStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BookingStatus\EditBookingStatus.aspx.cs">
+      <DependentUpon>EditBookingStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BookingStatus\EditBookingStatus.aspx.designer.cs">
+      <DependentUpon>EditBookingStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchCorpOffice\AddBranchCorp.aspx.cs">
+      <DependentUpon>AddBranchCorp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchCorpOffice\AddBranchCorp.aspx.designer.cs">
+      <DependentUpon>AddBranchCorp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchCorpOffice\EditBranchCorp.aspx.cs">
+      <DependentUpon>EditBranchCorp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchCorpOffice\EditBranchCorp.aspx.designer.cs">
+      <DependentUpon>EditBranchCorp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchGateway\AddGateway.aspx.cs">
+      <DependentUpon>AddGateway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchGateway\AddGateway.aspx.designer.cs">
+      <DependentUpon>AddGateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchGateway\EditGateway.aspx.cs">
+      <DependentUpon>EditGateway.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchGateway\EditGateway.aspx.designer.cs">
+      <DependentUpon>EditGateway.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchSatelliteOfficeMaintenance\AddBSO.aspx.cs">
+      <DependentUpon>AddBSO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchSatelliteOfficeMaintenance\AddBSO.aspx.designer.cs">
+      <DependentUpon>AddBSO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchSatelliteOfficeMaintenance\EditBSO.aspx.cs">
+      <DependentUpon>EditBSO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BranchSatelliteOfficeMaintenance\EditBSO.aspx.designer.cs">
+      <DependentUpon>EditBSO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BusinessType\AddBusinessType.aspx.cs">
+      <DependentUpon>AddBusinessType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BusinessType\AddBusinessType.aspx.designer.cs">
+      <DependentUpon>AddBusinessType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BusinessType\EditBusinessType.aspx.cs">
+      <DependentUpon>EditBusinessType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\BusinessType\EditBusinessType.aspx.designer.cs">
+      <DependentUpon>EditBusinessType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\City\AddCity.aspx.cs">
+      <DependentUpon>AddCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\City\AddCity.aspx.designer.cs">
+      <DependentUpon>AddCity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\City\EditCity.aspx.cs">
+      <DependentUpon>EditCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\City\EditCity.aspx.designer.cs">
+      <DependentUpon>EditCity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Cluster\AddCluster.aspx.cs">
+      <DependentUpon>AddCluster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Cluster\AddCluster.aspx.designer.cs">
+      <DependentUpon>AddCluster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Cluster\EditCluster.aspx.cs">
+      <DependentUpon>EditCluster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Cluster\EditCluster.aspx.designer.cs">
+      <DependentUpon>EditCluster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\CommodityType\AddCommodityType.aspx.cs">
+      <DependentUpon>AddCommodityType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\CommodityType\AddCommodityType.aspx.designer.cs">
+      <DependentUpon>AddCommodityType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\CommodityType\EditCommodityType.aspx.cs">
+      <DependentUpon>EditCommodityType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\CommodityType\EditCommodityType.aspx.designer.cs">
+      <DependentUpon>EditCommodityType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Commodity\AddCommodity.aspx.cs">
+      <DependentUpon>AddCommodity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Commodity\AddCommodity.aspx.designer.cs">
+      <DependentUpon>AddCommodity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Commodity\EditCommodity.aspx.cs">
+      <DependentUpon>EditCommodity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Commodity\EditCommodity.aspx.designer.cs">
+      <DependentUpon>EditCommodity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Crating\AddCrating.aspx.cs">
+      <DependentUpon>AddCrating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Crating\AddCrating.aspx.designer.cs">
+      <DependentUpon>AddCrating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Crating\EditCrating.aspx.cs">
+      <DependentUpon>EditCrating.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Crating\EditCrating.aspx.designer.cs">
+      <DependentUpon>EditCrating.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\DeliveryRemark\AddDeliveryRemark.aspx.cs">
+      <DependentUpon>AddDeliveryRemark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\DeliveryRemark\AddDeliveryRemark.aspx.designer.cs">
+      <DependentUpon>AddDeliveryRemark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\DeliveryRemark\EditDeliveryRemark.aspx.cs">
+      <DependentUpon>EditDeliveryRemark.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\DeliveryRemark\EditDeliveryRemark.aspx.designer.cs">
+      <DependentUpon>EditDeliveryRemark.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\DeliveryStatus\AddDeliveryStatus.aspx.cs">
+      <DependentUpon>AddDeliveryStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\DeliveryStatus\AddDeliveryStatus.aspx.designer.cs">
+      <DependentUpon>AddDeliveryStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\DeliveryStatus\EditDeliveryStatus.aspx.cs">
+      <DependentUpon>EditDeliveryStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\DeliveryStatus\EditDeliveryStatus.aspx.designer.cs">
+      <DependentUpon>EditDeliveryStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Flight\AddFlight.aspx.cs">
+      <DependentUpon>AddFlight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Flight\AddFlight.aspx.designer.cs">
+      <DependentUpon>AddFlight.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Flight\EditFlight.aspx.cs">
+      <DependentUpon>EditFlight.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Flight\EditFlight.aspx.designer.cs">
+      <DependentUpon>EditFlight.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\GoodsDescription\AddGoodsDesc.aspx.cs">
+      <DependentUpon>AddGoodsDesc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\GoodsDescription\AddGoodsDesc.aspx.designer.cs">
+      <DependentUpon>AddGoodsDesc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\GoodsDescription\EditGoodsDesc.aspx.cs">
+      <DependentUpon>EditGoodsDesc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\GoodsDescription\EditGoodsDesc.aspx.designer.cs">
+      <DependentUpon>EditGoodsDesc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\GroupIslandMaintenance\AddGroupIsland.aspx.cs">
+      <DependentUpon>AddGroupIsland.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\GroupIslandMaintenance\AddGroupIsland.aspx.designer.cs">
+      <DependentUpon>AddGroupIsland.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\GroupIslandMaintenance\EditGroupIsland.aspx.cs">
+      <DependentUpon>EditGroupIsland.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\GroupIslandMaintenance\EditGroupIsland.aspx.designer.cs">
+      <DependentUpon>EditGroupIsland.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Industry\AddIndustry.aspx.cs">
+      <DependentUpon>AddIndustry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Industry\AddIndustry.aspx.designer.cs">
+      <DependentUpon>AddIndustry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Industry\EditIndustry.aspx.cs">
+      <DependentUpon>EditIndustry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Industry\EditIndustry.aspx.designer.cs">
+      <DependentUpon>EditIndustry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\OrganizationType\AddOrganizationType.aspx.cs">
+      <DependentUpon>AddOrganizationType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\OrganizationType\AddOrganizationType.aspx.designer.cs">
+      <DependentUpon>AddOrganizationType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\OrganizationType\EditOrganizationType.aspx.cs">
+      <DependentUpon>EditOrganizationType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\OrganizationType\EditOrganizationType.aspx.designer.cs">
+      <DependentUpon>EditOrganizationType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Packaging\AddPackaging.aspx.cs">
+      <DependentUpon>AddPackaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Packaging\AddPackaging.aspx.designer.cs">
+      <DependentUpon>AddPackaging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Packaging\EditPackaging.aspx.cs">
+      <DependentUpon>EditPackaging.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Packaging\EditPackaging.aspx.designer.cs">
+      <DependentUpon>EditPackaging.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\PaymentMode\AddPaymentMode.aspx.cs">
+      <DependentUpon>AddPaymentMode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\PaymentMode\AddPaymentMode.aspx.designer.cs">
+      <DependentUpon>AddPaymentMode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\PaymentMode\EditPaymentMode.aspx.cs">
+      <DependentUpon>EditPaymentMode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\PaymentMode\EditPaymentMode.aspx.designer.cs">
+      <DependentUpon>EditPaymentMode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\PaymentTerm\AddPaymentTerm.aspx.cs">
+      <DependentUpon>AddPaymentTerm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\PaymentTerm\AddPaymentTerm.aspx.designer.cs">
+      <DependentUpon>AddPaymentTerm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\PaymentTerm\EditPaymentTerm.aspx.cs">
+      <DependentUpon>EditPaymentTerm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\PaymentTerm\EditPaymentTerm.aspx.designer.cs">
+      <DependentUpon>EditPaymentTerm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ProvinceMaintenance\AddProvince.aspx.cs">
+      <DependentUpon>AddProvince.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ProvinceMaintenance\AddProvince.aspx.designer.cs">
+      <DependentUpon>AddProvince.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ProvinceMaintenance\EditProvince.aspx.cs">
+      <DependentUpon>EditProvince.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ProvinceMaintenance\EditProvince.aspx.designer.cs">
+      <DependentUpon>EditProvince.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Reason\AddReason.aspx.cs">
+      <DependentUpon>AddReason.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Reason\AddReason.aspx.designer.cs">
+      <DependentUpon>AddReason.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Reason\EditReason.aspx.cs">
+      <DependentUpon>EditReason.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Reason\EditReason.aspx.designer.cs">
+      <DependentUpon>EditReason.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\RegionMaintenance\AddRegion.aspx.cs">
+      <DependentUpon>AddRegion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\RegionMaintenance\AddRegion.aspx.designer.cs">
+      <DependentUpon>AddRegion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\RegionMaintenance\EditRegion.aspx.cs">
+      <DependentUpon>EditRegion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\RegionMaintenance\EditRegion.aspx.designer.cs">
+      <DependentUpon>EditRegion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Remarks\AddRemarks.aspx.cs">
+      <DependentUpon>AddRemarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Remarks\AddRemarks.aspx.designer.cs">
+      <DependentUpon>AddRemarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Remarks\EditRemarks.aspx.cs">
+      <DependentUpon>EditRemarks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Remarks\EditRemarks.aspx.designer.cs">
+      <DependentUpon>EditRemarks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\RevenueTypeMaintenance\AddRUT.aspx.cs">
+      <DependentUpon>AddRUT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\RevenueTypeMaintenance\AddRUT.aspx.designer.cs">
+      <DependentUpon>AddRUT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\RevenueTypeMaintenance\EditRUT.aspx.cs">
+      <DependentUpon>EditRUT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\RevenueTypeMaintenance\EditRUT.aspx.designer.cs">
+      <DependentUpon>EditRUT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\SBF\AddSBF.aspx.cs">
+      <DependentUpon>AddSBF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\SBF\AddSBF.aspx.designer.cs">
+      <DependentUpon>AddSBF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\SBF\EditSBF.aspx.cs">
+      <DependentUpon>EditSBF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\SBF\EditSBF.aspx.designer.cs">
+      <DependentUpon>EditSBF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ServiceMode\AddServiceMode.aspx.cs">
+      <DependentUpon>AddServiceMode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ServiceMode\AddServiceMode.aspx.designer.cs">
+      <DependentUpon>AddServiceMode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ServiceMode\EditServiceMode.aspx.cs">
+      <DependentUpon>EditServiceMode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ServiceMode\EditServiceMode.aspx.designer.cs">
+      <DependentUpon>EditServiceMode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ServiceType\AddServiceType.aspx.cs">
+      <DependentUpon>AddServiceType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ServiceType\AddServiceType.aspx.designer.cs">
+      <DependentUpon>AddServiceType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ServiceType\EditServiceType.aspx.cs">
+      <DependentUpon>EditServiceType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ServiceType\EditServiceType.aspx.designer.cs">
+      <DependentUpon>EditServiceType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ShipMode\AddShipMode.aspx.cs">
+      <DependentUpon>AddShipMode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ShipMode\AddShipMode.aspx.designer.cs">
+      <DependentUpon>AddShipMode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ShipMode\EditShipMode.aspx.cs">
+      <DependentUpon>EditShipMode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\ShipMode\EditShipMode.aspx.designer.cs">
+      <DependentUpon>EditShipMode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Status\AddStatus.aspx.cs">
+      <DependentUpon>AddStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Status\AddStatus.aspx.designer.cs">
+      <DependentUpon>AddStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Status\EditStatus.aspx.cs">
+      <DependentUpon>EditStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\CMSMaintenance\UserModal\Status\EditStatus.aspx.designer.cs">
+      <DependentUpon>EditStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\FlightInformation\FlightInformation.aspx.cs">
+      <DependentUpon>FlightInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\FlightInformation\FlightInformation.aspx.designer.cs">
+      <DependentUpon>FlightInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\FlightInformation\Flight\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\FlightInformation\Flight\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\FlightInformation\Flight\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\FlightInformation\Flight\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\RateMatrix\RateMatrixMain.aspx.cs">
+      <DependentUpon>RateMatrixMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\RateMatrix\RateMatrixMain.aspx.designer.cs">
+      <DependentUpon>RateMatrixMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\RateMatrix\RateMatrixEvent\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\RateMatrix\RateMatrixEvent\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\RateMatrix\RateMatrixEvent\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\RateMatrix\RateMatrixEvent\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\RateMatrix\RateMatrixEvent\Import.aspx.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\RateMatrix\RateMatrixEvent\Import.aspx.designer.cs">
+      <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\TrackNTrace\TrackNTrace.aspx.cs">
+      <DependentUpon>TrackNTrace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\TrackNTrace\TrackNTrace.aspx.designer.cs">
+      <DependentUpon>TrackNTrace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance\TruckAreaManagement\TruckAreaManagement.aspx.cs">
+      <DependentUpon>TruckAreaManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance\TruckAreaManagement\TruckAreaManagement.aspx.designer.cs">
+      <DependentUpon>TruckAreaManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppService.cs" />
+    <Compile Include="Models\AwbDetailsModel.cs" />
+    <Compile Include="Models\BookingInformation.cs" />
+    <Compile Include="Models\CompanyInformation.cs" />
+    <Compile Include="Models\GlobalCode.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\PaymentSummaryDetails.cs" />
+    <Compile Include="Models\PaymentSummaryMainDetails.cs" />
+    <Compile Include="Models\ReportGlobalModel.cs" />
+    <Compile Include="Models\StatementOfAccountModel.cs" />
+    <Compile Include="Models\UserAccessMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\AWBNoTracking.aspx.cs">
+      <DependentUpon>AWBNoTracking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\AWBNoTracking.aspx.designer.cs">
+      <DependentUpon>AWBNoTracking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\AWBDetailedTracking.aspx.cs">
+      <DependentUpon>AWBDetailedTracking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\AWBDetailedTracking.aspx.designer.cs">
+      <DependentUpon>AWBDetailedTracking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\AWBTracking\AWBTracking.aspx.cs">
+      <DependentUpon>AWBTracking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\AWBTracking\AWBTracking.aspx.designer.cs">
+      <DependentUpon>AWBTracking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\AWBTracking\AWBTrackingModal\ViewCargo.aspx.cs">
+      <DependentUpon>ViewCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\AWBTracking\AWBTrackingModal\ViewCargo.aspx.designer.cs">
+      <DependentUpon>ViewCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Collections1.aspx.cs">
+      <DependentUpon>Collections1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Collections1.aspx.designer.cs">
+      <DependentUpon>Collections1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Collect\ReportCollection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Collect\ReportCollection.Designer.cs">
+      <DependentUpon>ReportCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\MasterSales.aspx.cs">
+      <DependentUpon>MasterSales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\MasterSales.aspx.designer.cs">
+      <DependentUpon>MasterSales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\MasterSalesReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\MasterSalesReport.Designer.cs">
+      <DependentUpon>MasterSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerBCOReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerBCOReport.Designer.cs">
+      <DependentUpon>SalesPerBCOReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerClientReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerClientReport.Designer.cs">
+      <DependentUpon>SalesPerClientReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerRevenueUnitReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerRevenueUnitReport.Designer.cs">
+      <DependentUpon>SalesPerRevenueUnitReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerShipmodeReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerShipmodeReport.Designer.cs">
+      <DependentUpon>SalesPerShipmodeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerUserLevelReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\Reports\SalesPerUserLevelReport.Designer.cs">
+      <DependentUpon>SalesPerUserLevelReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerBCO.aspx.cs">
+      <DependentUpon>SalesPerBCO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerBCO.aspx.designer.cs">
+      <DependentUpon>SalesPerBCO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerClient.aspx.cs">
+      <DependentUpon>SalesPerClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerClient.aspx.designer.cs">
+      <DependentUpon>SalesPerClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerRevenueUnit.aspx.cs">
+      <DependentUpon>SalesPerRevenueUnit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerRevenueUnit.aspx.designer.cs">
+      <DependentUpon>SalesPerRevenueUnit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerShipmode.aspx.cs">
+      <DependentUpon>SalesPerShipmode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerShipmode.aspx.designer.cs">
+      <DependentUpon>SalesPerShipmode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerUserLevel.aspx.cs">
+      <DependentUpon>SalesPerUserLevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Finance\Sales\SalesPerUserLevel.aspx.designer.cs">
+      <DependentUpon>SalesPerUserLevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FLM\FLM_Qtyby_Commodity.aspx.cs">
+      <DependentUpon>FLM_Qtyby_Commodity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\FLM\FLM_Qtyby_Commodity.aspx.designer.cs">
+      <DependentUpon>FLM_Qtyby_Commodity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FLM\FLM_Wtby_Commodity.aspx.cs">
+      <DependentUpon>FLM_Wtby_Commodity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\FLM\FLM_Wtby_Commodity.aspx.designer.cs">
+      <DependentUpon>FLM_Wtby_Commodity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FLM\Report\FLM_Qtyby_Commodity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\FLM\Report\FLM_Qtyby_Commodity.designer.cs">
+      <DependentUpon>FLM_Qtyby_Commodity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FLM\Report\FLM_Wtby_Commodity.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\FLM\Report\FLM_Wtby_Commodity.designer.cs">
+      <DependentUpon>FLM_Wtby_Commodity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\GetColumnDataFromDataTable.cs" />
+    <Compile Include="Report\Operation\AWBNoModal\AWBTrackingModal.aspx.cs">
+      <DependentUpon>AWBTrackingModal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\AWBNoModal\AWBTrackingModal.aspx.designer.cs">
+      <DependentUpon>AWBTrackingModal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Delivered.aspx.cs">
+      <DependentUpon>Delivered.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Delivered.aspx.designer.cs">
+      <DependentUpon>Delivered.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Hold.aspx.cs">
+      <DependentUpon>Hold.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Hold.aspx.designer.cs">
+      <DependentUpon>Hold.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Misrouted.aspx.cs">
+      <DependentUpon>Misrouted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Misrouted.aspx.designer.cs">
+      <DependentUpon>Misrouted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Offloaded.aspx.cs">
+      <DependentUpon>Offloaded.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Offloaded.aspx.designer.cs">
+      <DependentUpon>Offloaded.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Pending.aspx.cs">
+      <DependentUpon>Pending.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Pending.aspx.designer.cs">
+      <DependentUpon>Pending.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\DeliveredReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\DeliveredReport.designer.cs">
+      <DependentUpon>DeliveredReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\HoldReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\HoldReport.designer.cs">
+      <DependentUpon>HoldReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\MisroutedReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\MisroutedReport.designer.cs">
+      <DependentUpon>MisroutedReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\OffloadedReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\OffloadedReport.designer.cs">
+      <DependentUpon>OffloadedReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\PendingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\PendingReport.designer.cs">
+      <DependentUpon>PendingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\RUDReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\Reports\RUDReport.designer.cs">
+      <DependentUpon>RUDReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\RUD.aspx.cs">
+      <DependentUpon>RUD.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\CargoMonitoring\RUD.aspx.designer.cs">
+      <DependentUpon>RUD.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Booking.aspx.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Booking.aspx.designer.cs">
+      <DependentUpon>Booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\BranchAcceptance.aspx.cs">
+      <DependentUpon>BranchAcceptance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\BranchAcceptance.aspx.designer.cs">
+      <DependentUpon>BranchAcceptance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Bundle.aspx.cs">
+      <DependentUpon>Bundle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Bundle.aspx.designer.cs">
+      <DependentUpon>Bundle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\CargoTransfer.aspx.cs">
+      <DependentUpon>CargoTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\CargoTransfer.aspx.designer.cs">
+      <DependentUpon>CargoTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\DailyTrip.aspx.cs">
+      <DependentUpon>DailyTrip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\DailyTrip.aspx.designer.cs">
+      <DependentUpon>DailyTrip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\GatewayInbound.aspx.cs">
+      <DependentUpon>GatewayInbound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\GatewayInbound.aspx.designer.cs">
+      <DependentUpon>GatewayInbound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\GatewayOutbound.aspx.cs">
+      <DependentUpon>GatewayOutbound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\GatewayOutbound.aspx.designer.cs">
+      <DependentUpon>GatewayOutbound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\GatewayTransmittal.aspx.cs">
+      <DependentUpon>GatewayTransmittal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\GatewayTransmittal.aspx.designer.cs">
+      <DependentUpon>GatewayTransmittal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\GrandManifest.aspx.cs">
+      <DependentUpon>GrandManifest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\GrandManifest.aspx.designer.cs">
+      <DependentUpon>GrandManifest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\HoldCargo.aspx.cs">
+      <DependentUpon>HoldCargo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\HoldCargo.aspx.designer.cs">
+      <DependentUpon>HoldCargo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\MasterAirwayBillTracking.aspx.cs">
+      <DependentUpon>MasterAirwayBillTracking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\MasterAirwayBillTracking.aspx.designer.cs">
+      <DependentUpon>MasterAirwayBillTracking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\PaymentSummaryReport.aspx.cs">
+      <DependentUpon>PaymentSummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\PaymentSummaryReport.aspx.designer.cs">
+      <DependentUpon>PaymentSummaryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Pickup.aspx.cs">
+      <DependentUpon>Pickup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Pickup.aspx.designer.cs">
+      <DependentUpon>Pickup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\AWBTrackingReport .cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\AWBTrackingReport .Designer.cs">
+      <DependentUpon>AWBTrackingReport .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\BookingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\BookingReport.Designer.cs">
+      <DependentUpon>BookingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\BranchAcceptance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\BranchAcceptance.Designer.cs">
+      <DependentUpon>BranchAcceptance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\BundleReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\BundleReport.Designer.cs">
+      <DependentUpon>BundleReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\CargoTransferReportView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\CargoTransferReportView.designer.cs">
+      <DependentUpon>CargoTransferReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\DailyTripReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\DailyTripReport.Designer.cs">
+      <DependentUpon>DailyTripReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\GatewayInboundReportView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\GatewayInboundReportView.designer.cs">
+      <DependentUpon>GatewayInboundReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\GatewayOutboundReportView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\GatewayOutboundReportView.designer.cs">
+      <DependentUpon>GatewayOutboundReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\GatewayTransmitalReportView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\GatewayTransmitalReportView.designer.cs">
+      <DependentUpon>GatewayTransmitalReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\GrandManifestReportView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\GrandManifestReportView.Designer.cs">
+      <DependentUpon>GrandManifestReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\HoldCargoReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\HoldCargoReport.Designer.cs">
+      <DependentUpon>HoldCargoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\PaymentSummaryReportView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\PaymentSummaryReportView.Designer.cs">
+      <DependentUpon>PaymentSummaryReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\PickupReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\PickupReport.Designer.cs">
+      <DependentUpon>PickupReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\AWBDetailedTrackingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\AWBDetailedTrackingReport.Designer.cs">
+      <DependentUpon>AWBDetailedTrackingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\PODReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\PODReport.Designer.cs">
+      <DependentUpon>PODReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\SegregationReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\SegregationReport.Designer.cs">
+      <DependentUpon>SegregationReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\UnbundleReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Reports\UnbundleReport.Designer.cs">
+      <DependentUpon>UnbundleReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Segregation.aspx.cs">
+      <DependentUpon>Segregation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Segregation.aspx.designer.cs">
+      <DependentUpon>Segregation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Unbundle.aspx.cs">
+      <DependentUpon>Unbundle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Operation\Manifest\Unbundle.aspx.designer.cs">
+      <DependentUpon>Unbundle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Report1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Report1.Designer.cs">
+      <DependentUpon>Report1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ReportViewerForm1.aspx.cs">
+      <DependentUpon>ReportViewerForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ReportViewerForm1.aspx.designer.cs">
+      <DependentUpon>ReportViewerForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings\ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="UserAccess\Roles\ManageRoles.aspx.cs">
+      <DependentUpon>ManageRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccess\Roles\ManageRoles.aspx.designer.cs">
+      <DependentUpon>ManageRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccess\Roles\RolesModal\AddRoles.aspx.cs">
+      <DependentUpon>AddRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccess\Roles\RolesModal\AddRoles.aspx.designer.cs">
+      <DependentUpon>AddRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccess\Roles\RolesModal\EditRoles.aspx.cs">
+      <DependentUpon>EditRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccess\Roles\RolesModal\EditRoles.aspx.designer.cs">
+      <DependentUpon>EditRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccess\Roles\RolesModal\ViewRoles.aspx.cs">
+      <DependentUpon>ViewRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccess\Roles\RolesModal\ViewRoles.aspx.designer.cs">
+      <DependentUpon>ViewRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccess\UserRole\ManageUserRole.aspx.cs">
+      <DependentUpon>ManageUserRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccess\UserRole\ManageUserRole.aspx.designer.cs">
+      <DependentUpon>ManageUserRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccess\UserRole\UserRoleModal\AddAccesstoModule.aspx.cs">
+      <DependentUpon>AddAccesstoModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccess\UserRole\UserRoleModal\AddAccesstoModule.aspx.designer.cs">
+      <DependentUpon>AddAccesstoModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccess\UserRole\UserRoleModal\AddUserRole.aspx.cs">
+      <DependentUpon>AddUserRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccess\UserRole\UserRoleModal\AddUserRole.aspx.designer.cs">
+      <DependentUpon>AddUserRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccess\UserRole\UserRoleModal\EditUserRole.aspx.cs">
+      <DependentUpon>EditUserRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccess\UserRole\UserRoleModal\EditUserRole.aspx.designer.cs">
+      <DependentUpon>EditUserRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Corporate\StatementOfAccountPrint\SOAReport.resx">
+      <DependentUpon>SOAReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Corporate\StatementOfAccountReport\SOAReport.resx" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\Finance\Collect\ReportCollection.resx">
+      <DependentUpon>ReportCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Finance\Sales\Reports\MasterSalesReport.resx">
+      <DependentUpon>MasterSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Finance\Sales\Reports\SalesPerBCOReport.resx">
+      <DependentUpon>SalesPerBCOReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Finance\Sales\Reports\SalesPerClientReport.resx">
+      <DependentUpon>SalesPerClientReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Finance\Sales\Reports\SalesPerRevenueUnitReport.resx">
+      <DependentUpon>SalesPerRevenueUnitReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Finance\Sales\Reports\SalesPerShipmodeReport.resx">
+      <DependentUpon>SalesPerShipmodeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Finance\Sales\Reports\SalesPerUserLevelReport.resx">
+      <DependentUpon>SalesPerUserLevelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FLM\Report\FLM_Qtyby_Commodity.resx">
+      <DependentUpon>FLM_Qtyby_Commodity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FLM\Report\FLM_Wtby_Commodity.resx">
+      <DependentUpon>FLM_Wtby_Commodity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\CargoMonitoring\Reports\DeliveredReport.resx">
+      <DependentUpon>DeliveredReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\CargoMonitoring\Reports\HoldReport.resx">
+      <DependentUpon>HoldReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\CargoMonitoring\Reports\MisroutedReport.resx">
+      <DependentUpon>MisroutedReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\CargoMonitoring\Reports\OffloadedReport.resx">
+      <DependentUpon>OffloadedReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\CargoMonitoring\Reports\PendingReport.resx">
+      <DependentUpon>PendingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\CargoMonitoring\Reports\RUDReport.resx">
+      <DependentUpon>RUDReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\AWBTrackingReport .resx">
+      <DependentUpon>AWBTrackingReport .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\BookingReport.resx">
+      <DependentUpon>BookingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\BranchAcceptance.resx">
+      <DependentUpon>BranchAcceptance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\BundleReport.resx">
+      <DependentUpon>BundleReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\CargoTransferReportView.resx">
+      <DependentUpon>CargoTransferReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\DailyTripReport.resx">
+      <DependentUpon>DailyTripReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\GatewayInboundReportView.resx">
+      <DependentUpon>GatewayInboundReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\GatewayOutboundReportView.resx">
+      <DependentUpon>GatewayOutboundReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\GatewayTransmitalReportView.resx">
+      <DependentUpon>GatewayTransmitalReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\GrandManifestReportView.resx">
+      <DependentUpon>GrandManifestReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\HoldCargoReport.resx">
+      <DependentUpon>HoldCargoReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\PaymentSummaryReportView.resx">
+      <DependentUpon>PaymentSummaryReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\PickupReport.resx">
+      <DependentUpon>PickupReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\AWBDetailedTrackingReport.resx">
+      <DependentUpon>AWBDetailedTrackingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\PODReport.resx">
+      <DependentUpon>PODReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\SegregationReport.resx">
+      <DependentUpon>SegregationReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Operation\Manifest\Reports\UnbundleReport.resx">
+      <DependentUpon>UnbundleReport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{affbf47e-61cb-46e3-80f4-283cf9c128ba}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{f9c5eaf8-f627-45f0-80c3-25d258a8f9de}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{1ea9e4c1-0c5f-4114-a917-7fae6c35ff15}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>39177</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:39177/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
